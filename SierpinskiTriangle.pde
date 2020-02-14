@@ -1,31 +1,27 @@
-public void setup()
-{
-size(1000,1000);
-noLoop();
+
+  
+public void setup(){
+ size(600,600);
+ sierpinski(0,600,600);
 }
 public void draw()
 {
-<<<<<<< HEAD
+
+}
+public void mouseDragged()//optional
+{
+
+}
+public void sierpinski(int x, int y, int len) {
+  if(len<= 10){
+  fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+  triangle(x, y, x+len, y, x+len/2, y-len);
+  }
+  else{
+  triangle(x, y, x+len, y, x+len/2, y-len);
+  sierpinski(x, y, len/2);
+  sierpinski(x+len/2, y, len/2);
+  sierpinski(x+len/4,y-len/2, len/2);
   
 }
-public void sierpinski(int x, int y, int len) 
-{
-  if(x == 
-=======
-  background(0);
-  stroke((int)(Math.random()*320),(int)(Math.random()*320),(int)(Math.random()*320));   
-  sierpinski(100,100,10);
-}
-public void sierpinski(int x, int y, int len) 
-{
-  if(len <= 10)
-    {  
-      triangle(x,y,x+len,y,(x+len)-x,y+len);
-    }
-   else
-     {
-        sierpinski(x+len/2,y,len);
-        sierpinski(x+len/4,y/2,len);
-     }
->>>>>>> af8a53b39ce4db534a78180888ebe9919e4f34ec
 }
